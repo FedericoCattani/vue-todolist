@@ -21,28 +21,34 @@
 
   <div id="app">
 
-    <!-- section di imput -->
+    <!-- area di input -->
     <div class="input-area">
       <input type="text" placeholder="New Task">
       <button>Aggiungi</button>
     </div>
 
-    <!-- section della lista-->
+    <!--lista-->
     <div class="container">
-      <ul class="tasks-list">
-        <li>
-          <span>cose da fare</span>
-          <i class="fa-solid fa-trash-can"></i>
+      
+      <h2 v-if="tasks.length === 0">Non ci sono tasks! &#128526;</h2>
+
+      <ul v-else class="tasks-list">
+
+        <li 
+          v-for="(task, index) in tasks" 
+          :class="{'done' : task.done}"
+          @click="task.done = !task.done"
+        >
+
+          <span>{{task.text}}</span>
+          <i 
+            @click.stop="removeTask(index)"
+            class="fa-solid fa-trash-can"></i>
         </li>
-        <li>
-          <span>cose da fare</span>
-        </li>
-        <li>
-          <span>cose da fare</span>
-        </li>
+
       </ul>
 
-      <h2>Non ci sono tasks! &#128526;</h2>
+      
     </div>
   </div>
 

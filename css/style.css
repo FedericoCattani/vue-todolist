@@ -9,7 +9,7 @@ body{
 }
 
 h2{
-  padding: 0 15px ;
+  padding: 10px 15px ;
 }
 
 .input-area{
@@ -35,12 +35,14 @@ h2{
   width: 70%;
   background-color: rgb(221, 217, 217);
   margin: 0 auto;
+  border-radius: 5px;
 }
 
 .tasks-list li{
   list-style: none;
   line-height: 50px;
   border-bottom: 1px solid rgb(172, 169, 169);
+  border-radius: 5px;
   cursor: pointer;
   padding: 0 15px;
   display: flex;
@@ -58,4 +60,8 @@ h2{
 
 .tasks-list li i:hover{
   color: red;
+}
+
+.tasks-list .done span{
+  text-decoration: line-through;
 }
