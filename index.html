@@ -23,8 +23,12 @@
     <h1>ToDo List</h1>
     <!-- area di input -->
     <div class="input-area">
-      <input type="text" placeholder="New Task">
-      <button>Aggiungi</button>
+      <input 
+        v-model.trim="newTaskStrg"
+        @keyup.enter="addNewTask"
+        type="text" placeholder="New Task"
+      >
+      <button @click="addNewTask">Aggiungi</button>
       <div>
         <span class="error">{{errorMsg}}</span>
       </div>
