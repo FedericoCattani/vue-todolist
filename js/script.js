@@ -46,7 +46,12 @@ createApp({
     addNewTask(){
 
       if(this.newTaskStrg.length > 4){
-        
+        const newTask = {
+          text: this.newTaskStrg,
+          done: false 
+        }
+        this.tasks.unshift(newTask),
+        this.newTaskStrg = ''
       } else{
         this.writeErrorMsg('Attenzione! La task deve essere almeno di cinque caratteri.')
       }
