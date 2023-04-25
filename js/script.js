@@ -29,10 +29,18 @@ createApp({
       if (this.tasks[index].done) {
         this.tasks.splice(index,1)
       } else {
-        this.errorMsg = 'Attenzione! Non puoi eliminare questa task se non è stata fatta.'
+        this.writeErrorMsg('Attenzione! Non puoi eliminare questa task se non è stata fatta.')
       }
       
-    }
+    }, 
+    writeErrorMsg(msg){
+      this.errorMsg = msg
+      setTimeout(() => {
+        this.errorMsg = ''
+      }, 2500)
+      
+    },
+    
   }
 
 }).mount('#app')
