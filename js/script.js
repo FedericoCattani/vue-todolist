@@ -4,20 +4,7 @@ createApp({
 
   data(){
     return{
-      tasks:[
-        {
-          text:'Comprare pane',
-          done: false
-        },
-        {
-          text:'Comprare biscotti',
-          done: true
-        },
-        {
-          text:'Comprare latte',
-          done: false
-        }
-      ],
+      tasks:[],
       errorMsg: '',
       newTaskStrg: '',
     }
